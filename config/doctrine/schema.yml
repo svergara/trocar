@@ -1,0 +1,48 @@
+#Lo siguiente es para cambiar el nombre a las tablas que genera el plugin
+#sfGuardDoctrine el cual tenia nombres de tablas largos y poco semanticos
+#INICIO CAMBIO NOMBRE TABLAS PLUGIN sfDoctrineGuard
+sfGuardGroup:
+  tableName: groups
+
+sfGuardPermission:
+  tableName: permissions
+
+sfGuardGroupPermission:
+  tableName: groups_permissions
+
+sfGuardUser:
+  tableName:  user_login
+
+sfGuardUserPermission:
+  tableName: user_permission
+
+sfGuardUserGroup:
+  tableName: user_group
+
+sfGuardRememberKey:
+  tableName: remember_key
+
+sfGuardForgotPassword:
+  tableName: forgot_password
+#FIN CAMBIO NOMBRE TABLAS PLUGIN sfDoctrineGuard
+
+#tabla de perfil de usuario:
+sfGuardUserProfile:
+  tableName: user_profile
+  actAs:
+    Timestampable: ~
+  columns:
+    user_id:        {  type: integer,  notnull: true  }
+    first_name:     {  type: string(150)  }
+    last_name:      {  type: string(150)  }
+    address:        {  type: string(100)  }
+    token:          {  type: string(32)   }
+  relations:
+    User:
+      class:        sfGuardUser
+      local:        user_id
+      foreign:      id
+      foreignAlias: Profile
+      foreignType:  one
+      type:         one
+      onDelete:     CASCADE
