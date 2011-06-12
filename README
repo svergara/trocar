@@ -1,0 +1,30 @@
+Trocar.cl Platforma colaborativa de intercambio de objetos
+
+1. Instrucciones de instalacion:
+
+ Para comenzar a desarrollar funcionalidades en el proyecto, primero se debe
+levantar el modelo de datos existente. Para comenzar, dirigirse al archivo
+config/databases.yml y rellenar con los datos correspondientes a su servidor
+mysql local. Luego, ejecutar en la terminal:
+
+ php symfony doctrine:migrate
+
+Con esto, se cargara a su base de datos el modelo de datos actual existente en
+el proyecto. Opcionalmente se puede realizar un poblamiento de datos con la 
+informacion proveniente de los archivos de fixture, esto mediante:
+
+ php symfony doctrine:data-load
+
+Para terminar, por seguridad se vuelve a construir todo el modelo de clases:
+
+ php symfony doctrine:build --all-classes
+
+Con lo anterior, nos aseguramos que la aplicacion se encuentra en su ultimo
+estado. Recordad siempre de crear clases y reconstruir el modelo ejecutar:
+
+ php symfony cc
+
+Eso es todo.
+
+@dacuna Sun Jun 12, 15:26.
+
