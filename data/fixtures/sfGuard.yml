@@ -13,8 +13,15 @@ sfGuardGroup:
     name:           admin
     description:    Administrator group
     Permissions:    [Permission_admin]
+  Group_member:
+    name:           member
+    description:    Grupo de usuarios comunes
+    Permissions:    [Permission_member]
 
 sfGuardPermission:
   Permission_admin:
     name:           admin
     description:    Administrator permission
+  Permission_member: 
+    name:           member
+    description:    Permiso de usuario comun
