@@ -37,6 +37,7 @@ sfGuardUserProfile:
     last_name:      {  type: string(150)  }
     address:        {  type: string(100)  }
     token:          {  type: string(32)   }
+    facebook_uid:   {  type: string(20)   }
   relations:
     User:
       class:        sfGuardUser

@@ -10,20 +10,23 @@
  * @property string $last_name
  * @property string $address
  * @property string $token
+ * @property string $facebook_uid
  * @property sfGuardUser $User
  * 
- * @method integer            getUserId()     Returns the current record's "user_id" value
- * @method string             getFirstName()  Returns the current record's "first_name" value
- * @method string             getLastName()   Returns the current record's "last_name" value
- * @method string             getAddress()    Returns the current record's "address" value
- * @method string             getToken()      Returns the current record's "token" value
- * @method sfGuardUser        getUser()       Returns the current record's "User" value
- * @method sfGuardUserProfile setUserId()     Sets the current record's "user_id" value
- * @method sfGuardUserProfile setFirstName()  Sets the current record's "first_name" value
- * @method sfGuardUserProfile setLastName()   Sets the current record's "last_name" value
- * @method sfGuardUserProfile setAddress()    Sets the current record's "address" value
- * @method sfGuardUserProfile setToken()      Sets the current record's "token" value
- * @method sfGuardUserProfile setUser()       Sets the current record's "User" value
+ * @method integer            getUserId()       Returns the current record's "user_id" value
+ * @method string             getFirstName()    Returns the current record's "first_name" value
+ * @method string             getLastName()     Returns the current record's "last_name" value
+ * @method string             getAddress()      Returns the current record's "address" value
+ * @method string             getToken()        Returns the current record's "token" value
+ * @method string             getFacebookUid()  Returns the current record's "facebook_uid" value
+ * @method sfGuardUser        getUser()         Returns the current record's "User" value
+ * @method sfGuardUserProfile setUserId()       Sets the current record's "user_id" value
+ * @method sfGuardUserProfile setFirstName()    Sets the current record's "first_name" value
+ * @method sfGuardUserProfile setLastName()     Sets the current record's "last_name" value
+ * @method sfGuardUserProfile setAddress()      Sets the current record's "address" value
+ * @method sfGuardUserProfile setToken()        Sets the current record's "token" value
+ * @method sfGuardUserProfile setFacebookUid()  Sets the current record's "facebook_uid" value
+ * @method sfGuardUserProfile setUser()         Sets the current record's "User" value
  * 
  * @package    trocar
  * @subpackage model
@@ -54,6 +57,10 @@ abstract class BasesfGuardUserProfile extends sfDoctrineRecord
         $this->hasColumn('token', 'string', 32, array(
              'type' => 'string',
              'length' => 32,
+             ));
+        $this->hasColumn('facebook_uid', 'string', 20, array(
+             'type' => 'string',
+             'length' => 20,
              ));
     }
 

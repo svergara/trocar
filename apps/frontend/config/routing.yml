@@ -5,7 +5,11 @@
 homepage:
   url:   /
   param: { module: default, action: index }
-
+  
+facebook_connect:
+  url:   /facebook_connect
+  param: {  module: register, action: fbConnect }
+  
 # generic rules
 # please, remove them by adding more specific rules
 default_index:

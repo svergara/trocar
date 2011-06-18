@@ -9,5 +9,6 @@ class ProjectConfiguration extends sfProjectConfiguration
   {
     $this->enablePlugins('sfDoctrinePlugin');
     $this->enablePlugins('sfDoctrineGuardPlugin');
+    require_once realpath(dirname(__FILE__).'/../lib/vendor/facebook/facebook.php');
   }
 }

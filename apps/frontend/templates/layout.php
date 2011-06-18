@@ -9,6 +9,25 @@
     <?php include_javascripts() ?>
   </head>
   <body>
+    <div id="fb-root"></div>
+    <script>
+      FB.init({
+        appId  : '179663705425430',
+        status : true, 
+        cookie : true, 
+        xfbml  : true  
+      });
+      
+       FB.Event.subscribe('auth.sessionChange', function(response) {
+            if (response.session) {
+              // el usuario esta logeado, se procesa su login en la plataforma
+                window.location="<?php echo url_for('@facebook_connect',true); ?>";
+            } else {
+              // no hay sesion de facebook, retornar al home
+                window.location="<?php echo url_for('@sf_guard_signout',true); ?>";
+            }
+          });
+    </script>
     <?php echo $sf_content ?>
   </body>
 </html>

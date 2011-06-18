@@ -16,4 +16,20 @@ class sfGuardUserTable extends PluginsfGuardUserTable
     {
         return Doctrine_Core::getTable('sfGuardUser');
     }
+    
+    /**
+     * Obtiene a un usuario mediante su id de facebook (si es que existe)
+     *
+     * @param  int  $facebook_id  Id de facebook de un usuario.
+     *
+     * @return Usuario sfGuardUser que corresponda al facebook_id entregado
+     */
+    public function getUserByFacebookId($facebook_id)
+    {
+      $q = $this->createQuery('u')
+           ->innerJoin('u.Profile p')
+           ->where('p.facebook_uid = ?', $facebook_id);
+      
+      return $q->fetchOne();
+    }
 }
